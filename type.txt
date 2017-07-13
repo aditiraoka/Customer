@@ -1,0 +1,5 @@
+plain=500
+textured=600
+pattern=700
+matte\u0020finish=750
+wallpaper=800

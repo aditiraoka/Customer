@@ -45,7 +45,18 @@ public class Cost {
      */
     public void selectType(double roomAreas[]) {
         
-        System.out.println("Whether you want plain or textured paint ?");
+        System.out.println("PAINT CATALOGUE");
+        try{
+        BufferedReader in = new BufferedReader(new FileReader(".//catalogue.txt"));
+        String line;
+        while((line = in.readLine()) != null ){
+            System.out.println(line);
+        }
+        in.close();
+        }catch(Exception f){
+            System.out.println("PAINT CATALOGUE FILE NOT FOUND");
+        }
+
         
         for (int i = 0; i < roomAreas.length; i++) {
             
@@ -98,7 +109,7 @@ public class Cost {
 
         for (int i = 0; i < roomAreas.length; i++) {
             
-            price = prop.getProperty(paintType[i]);
+            price = prop.getProperty(paintType[i].toLowerCase());
             totalCost[i] = getIndiviCost(price, roomAreas[i]);
 
         }
